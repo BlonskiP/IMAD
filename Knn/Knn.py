@@ -47,7 +47,7 @@ class Knn:
         for train_index, test_index in skf.split(X, Y):
             train = X.iloc[train_index, :]
             test = X.iloc[test_index, 0:-1]
-            if self.K is 0:
+            if self.K == 0:
                 self.K = int(sqrt(len(train)))
             classes_test = Y.iloc[test_index]
             prediciton = self.predicts(train, test)
