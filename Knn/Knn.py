@@ -41,7 +41,7 @@ class Knn:
     def test(self, dataset, folds,title):
 
         raports = []
-        skf = StratifiedKFold(n_splits=folds)
+        skf = StratifiedKFold(n_splits=folds,shuffle=True)
         X = dataset.iloc[:, :]
         Y = dataset.iloc[:, -1]
         for train_index, test_index in skf.split(X, Y):
