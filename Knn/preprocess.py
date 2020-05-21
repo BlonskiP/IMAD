@@ -15,7 +15,7 @@ def change_category_columns(dataset, cat_col):
     new_set = new_set.astype(dic)
     return new_set
 
-def preprocess_dateset(dataset,cat_col,drop_col):
+def preprocess_dateset(dataset,cat_col=None,drop_col=None):
     dataset = drop_columns(dataset,drop_col)
     dataset = change_category_columns(dataset,cat_col)
     dataset = StandarScalce(dataset)
