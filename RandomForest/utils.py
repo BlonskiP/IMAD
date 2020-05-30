@@ -1,4 +1,3 @@
-#Script to test random forest
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split, cross_val_score
@@ -6,8 +5,8 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, accuracy_score, make_scorer
 
-
 classification_reports = []
+
 def create_reseach_result_dataframe(classification_reports, str_params):
     n_raports = len(classification_reports)
     n_classes = len(classification_reports[0].keys()) - 3
@@ -30,32 +29,8 @@ def create_reseach_result_dataframe(classification_reports, str_params):
     results = pd.DataFrame(data=results_col)
     return results
 
-def classification_report_with_accuracy_score(y_true, y_pred):
+def classification_report_score(y_true, y_pred):
 
     raport = classification_report(y_true, y_pred, output_dict=True,zero_division=1)
     classification_reports.append(raport)
     return accuracy_score(y_true, y_pred)
-
-iris = pd.read_csv('datasets\Iris.csv')
-#iris = preprocess_dateset(iris,['Species'],['Id'])
-
-X = iris.iloc[:,1:-1] #Iris with no ID and Species columns
-Y = iris.iloc[:,-1] # Iris Species columns (last one)
-
-x_train , x_test, y_train,  y_test = train_test_split(X,Y,test_size=0.2)
-print("Single decision tree")
-decisionTree = DecisionTreeClassifier()
-decisionTree.fit(x_train,y_train)
-print(classification_report(y_test, decisionTree.predict(x_test), output_dict=False,zero_division=1))
-
-print("Random Forest - 10 trees")
-randomForest = RandomForestClassifier(n_estimators=100, # how many decision trees inside?
-                                      n_jobs = -1, #use all processors for pararell operations
-
-                                      )
-randomForest.fit(x_train,y_train)
-
-print(classification_report(y_test, randomForest.predict(x_test), output_dict=False,zero_division=1))
-folds = 5
-cross_val_score(randomForest, X=X, y=Y, cv=folds, scoring=make_scorer(classification_report_with_accuracy_score))
-print(create_reseach_result_dataframe(classification_reports,'test'))
