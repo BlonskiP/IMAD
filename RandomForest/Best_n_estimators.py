@@ -19,7 +19,7 @@ results_col = {'Set': [],
                    'recall': [],
                    'fscore': []}
 folds = [5, 8, 10]
-n_estimators = [3,5,8]
+n_estimators = [10,20,30]
 def research_Random_forest(n_estimators, dataset_name, dataset):
     results = pd.DataFrame(data=results_col)
     str_param = dataset_name + " RF estymatory="+str(n_estimators)
@@ -93,5 +93,5 @@ def put_to_file(research_results,dataset_name):
                                                caption="Najlepsze ilości estymatorów dla Adaboost " + dataset_name))
 #put_to_file(research_dataset('iris',iris),"iris")
 put_to_file(research_dataset('Glass',glass),"Glass")
-#put_to_file(research_dataset('wine',wine),"Wine")
-#put_to_file(research_dataset('seeds',seeds),"seeds")
+put_to_file(research_dataset('wine',wine),"Wine")
+put_to_file(research_dataset('seeds',seeds),"seeds")
