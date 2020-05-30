@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5a758b8-0e39-4c2f-8989-fb9547410002" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bestResults.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blonski_225959_IMAD_KNN.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/Knn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knn.pdf" beforeDir="false" />
-    </list>
+    <list default="true" id="c5a758b8-0e39-4c2f-8989-fb9547410002" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +128,7 @@
       <updated>1589411933187</updated>
       <workItem from="1589411946880" duration="35579000" />
       <workItem from="1589984248937" duration="5781000" />
-      <workItem from="1590060857878" duration="5125000" />
+      <workItem from="1590060857878" duration="5726000" />
     </task>
     <servers />
   </component>
